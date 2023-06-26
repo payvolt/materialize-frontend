@@ -1,0 +1,471 @@
+* {
+    box-sizing: border-box;
+}
+
+a,
+li,
+ul,
+header,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+text-area,
+body,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar {
+    background-color: #E8EBED;
+}
+
+.hero-section {
+    height: auto;
+    width: 100%;
+    background: url('../images/kiril-bg.png') no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.hero-content {
+    padding: 200px 100px 200px 50px;
+}
+
+/* Team-member-CSS */
+
+.team-profile {
+    padding: 40px;
+}
+
+.team {
+    height: auto;
+    width: 100%;
+    background: url('../images/team-blur-bg.png') no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    position: relative;
+}
+
+
+
+.profile-content {
+    background: #F5F5F7;
+    border-radius: 50px;
+    padding: 50px;
+}
+
+
+
+
+
+/* Banner 1 content */
+
+.banner1 {
+    border: 2px solid red;
+    height: 100vh;
+    width: 100%;
+}
+
+.banner1-content1 {
+    border: 2px solid red;
+    /* padding: 200px 100px 200px 50px; */
+    height: 550px;
+    margin-top: 35px;
+}
+
+.banner1-content2 {
+    border: 2px solid red;
+    /* padding: 200px 100px 200px 50px; */
+    height: 550px;
+    margin-top: 35px;
+}
+
+.text1 {
+    border: 2px solid red;
+
+}
+
+.text2 {
+    border: 2px solid red;
+
+}
+
+.youtube-box img {
+    height: 200px;
+    width: 400px;
+}
+
+/* Banner 2 CSS */
+
+.services .icon-box {
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+    transition: all ease-in-out 0.4s;
+    background: #F8F9FA;
+    border-radius: 50px;
+    margin: 20px 0px 20px 0px;
+}
+
+.services .icon-box .icon {
+    margin-bottom: 10px;
+}
+
+.services .icon-box .icon i {
+    color: #47b2e4;
+    font-size: 36px;
+    transition: 0.3s;
+}
+
+.services .icon-box h4 {
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.services .icon-box h4 a {
+    color: #37517e;
+    transition: ease-in-out 0.3s;
+}
+
+.services .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* .services .icon-box:hover {
+    transform: translateY(-10px);
+  }
+  
+  .services .icon-box:hover h4 a {
+    color: #47b2e4;
+  } */
+
+
+.wrapper {
+    /* border: 2px solid red; */
+    padding: 70px;
+}
+
+.section-title a {
+    width: 1000px;
+    border-radius: 50px;
+
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+/* Banner 3 CSS */
+
+
+.banner3 {
+
+    border: 2px solid red;
+    background: #F5F5F7;
+    position: relative;
+}
+
+
+.img-1 {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.banner3-button a {
+    width: 500px;
+    border-radius: 50px;
+
+}
+
+.banner3-button {
+    display: flex;
+    justify-content: center;
+
+}
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+.team {
+    /* background: #fff; */
+    padding: 60px 0;
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 1px;
+    background: #00c1c1;
+    bottom: 0;
+    left: calc(50% - 100px);
+}
+
+.team .member {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    /* background: #fff; */
+    /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); */
+}
+
+.team .member .member-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.team .member .social {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    right: 0;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team .member .social a {
+    transition: color 0.3s;
+    color: #334242;
+    margin: 0 3px;
+    border-radius: 50px;
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 193, 193, 0.8);
+    display: inline-block;
+    transition: ease-in-out 0.3s;
+    /* color: #fff; */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team .member .social a:hover {
+    background: #00c1c1;
+}
+
+.team .member .social i {
+    font-size: 18px;
+    line-height: 0;
+}
+
+.team .member .member-info {
+    padding: 25px 15px;
+}
+
+.team .member .member-info h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #334242;
+}
+
+.team .member .member-info span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #aaaaaa;
+}
+
+.team .member .member-info p {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 26px;
+    color: #777777;
+}
+
+.team .member:hover .social {
+    opacity: 1;
+    bottom: 15px;
+}
+
+.wrapper-container-team {
+    background: #F6F7F8;
+    border-radius: 50px;
+}
+
+.row-wrapper {
+    padding: 30px;
+    margin-left: 30px;
+    display: flex;
+}
+
+
+/* Contact-us Section */
+
+/* .contact-us {
+    border: 2px solid red;
+
+} */
+
+.contactus-wrapper {
+    /* border: 2px solid red; */
+
+    display: flex;
+}
+
+.contact-us-content1 img {
+    height: 58%;
+    margin-top: 126px;
+
+}
+
+.contact-us-content2 {
+    /* border: 2px solid red; */
+    margin: 100px 10px 100px 10px;
+    background: #F5F5F7;
+    border-radius: 50px;
+    padding: 25px;
+}
+
+#myInput {
+
+    border-radius: 50px;
+    width: 81%;
+    float: right;
+
+}
+
+.contact-us-content2 a {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin-left: 70px;
+    border-radius: 50px;
+}
+
+.contact-content {
+    margin: 100px 10px 100px 10px;
+    background: #F5F5F7;
+    border-radius: 50px;
+    padding: 25px;
+}
+
+.contact-content a {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin-left: 70px;
+    border-radius: 50px;
+}
+
+.contact-logo {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+
+.contact-us-popup {
+    height: auto;
+    width: 100%;
+    background: url('../images/team-blur-bg.png') no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    position: relative;
+}
+
+
+
+/*  FAQ Section */
+
+
+
+.faq-heading {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+.faq-wrapper {
+
+    border-radius: 50px;
+    background: #F5F5F7;
+    padding: 30px 30px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+
+/* Footer Section */
+
+footer {
+    padding: 20px 0px;
+    background: #F5F5F7;
+}
+
+.content-1 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+.content-1 a {
+    font-weight: bold;
+}
+
+.icons {
+    font-size: 36px;
+    padding: 20px 0px;
+}
+
+.content-2 {
+    padding: 18px 18px 0px;
+    font-weight: bold;
+}
+
+.content-3 {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.icon-box h4 a {
+    display: flex;
+    justify-content: center;
+}
