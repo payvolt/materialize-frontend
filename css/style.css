@@ -345,8 +345,7 @@ footer .social-media p {
     width: 100%;
     max-width: 935px;
     margin: auto;
-    padding-top: 72px;
-    padding-bottom: 70px;
+    padding: 30px;
     border-radius: 50px;
     background: #F5F5F7;
     margin-bottom: 70px;
@@ -362,6 +361,7 @@ footer .social-media p {
     padding: 18px;
     width: 100%;
     border: none;
+    border-radius: 10px;
     text-align: left;
     outline: none;
     font-size: 15px;
@@ -392,7 +392,7 @@ footer .social-media p {
     padding: 0 18px;
     line-height: 24px;
   
-    color: #F1A33B;
+    color: #4b4b4b;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -400,3 +400,10 @@ footer .social-media p {
 
 
 
+
+
+@media only screen and (max-width: 900px) {
+    .team-single {
+        height: auto;
+    }
+}
