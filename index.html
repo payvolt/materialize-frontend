@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
         integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,8 +14,6 @@
     <!-- Including CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-
-
 </head>
 
 <body>
@@ -26,7 +23,7 @@
     <header>
         <nav class="navbar navbar-expand-lg  shadow">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="images/logo.png" alt="" height="60">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -36,13 +33,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">שירותים</a>
+                            <a class="nav-link active" aria-current="page" href="#process">שירותים</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">מדריך חינם</a>
+                            <a class="nav-link" href="freebook.html">מדריך חינם</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">הצוות שלנו</a>
+                            <a class="nav-link" href="#tabs-section">הצוות שלנו</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">מחפשי
@@ -50,7 +47,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">צור קשר</a>
+                            <a class="nav-link" href="#form-section">צור קשר</a>
                         </li>
                     </ul>
                 </div>
@@ -60,14 +57,14 @@
 
     <section class="hero-main">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-end">
                 <div class="col-lg-6">
-                    <div class="hero-content">
+                    <div class="hero-content text-end">
                         <h1><span>מרעיון</span> לסטארטאפ</h1>
                         <p>תוכנית מותאמות אישית
                             שתעזור לך לגייס לקוחות
                             ותגרום למשקיעים לרדוף אחריך</p>
-                        <a href="#" class="btn btn-primary">!אני רוצה פגישת ייעוץ חינם</a>
+                        <a href="#form-section" class="btn btn-primary">!אני רוצה פגישת ייעוץ חינם</a>
                     </div>
                 </div>
             </div>
@@ -76,51 +73,19 @@
 
     <!-- Header End  -->
 
-    <section class="about section-padding">
+    <section class="about section-padding" id="about">
         <div class="container">
             <div class="about-content">
                 <div class="row">
-                    <div class="col-lg-6">
-
-                        <div class="card mb-5 h-custom">
-                            <div class="card-header">
-                                <h4><img src="images/card-icon-2.png" height="20">?יש לך רעיון מצויין לסטארטאפ
-                                    ?אבל אין לך כסף וכלים כדי להגשים אותו</h4>
-                            </div>
-                            <div class="card-body">
-                                <p>,גם אנחנו היינו שם כשהתחלנו את הסטארטאפים שלנו
-                                    בזבזנו המון זמן וכסף כשלא היה לנו מושג מה באמת צריך לעשות
-                                    ,סטארטאפ זה ג'ונגל של אי וודאות שדורש מורה דרך
-                                    .כל פניה לא נכונה יכולה להוביל לטעויות קריטיות</p>
-                            </div>
-                        </div>
-
-
-                        <div class="card mb-lg-4 h-custom ">
-                            <div class="card-header">
-                                <h4><img src="images/card-icon-1.png" height="20"> הטעויות הנפוצות של רוב היזמים</h4>
-                            </div>
-                            <div class="card-body">
-                                <p>,התעוררת עם רצון עז להגשים רעיון
-                                    ,אתה הולך למשפחה וחברים לשמוע את דעתם על הרעיון
-                                    ,מקבל מלא רוח למפרשים לדחוף את המיזם
-                                    .רואה את עצמך מתפטר וכבר מריץ אימפריה משלך
-                                    אתה מכין מצגות למשקיעים, תוכניות עסקיות
-                                    ,או שרץ לפיתוח להוציא מאות אלפי שקלים
-                                    ,אתה צריך להבין דבר אחד
-                                    משקיעים כיתתו רגליים בשביל להגיע להיות משקיעים
-                                    .תראה למשקיעה איך הכסף יחזור אליו עם רווח כפול
-                                    !כלומר תראה לו ביקוש</p>
-                            </div>
-                        </div>
-                    </div>
+                  
                     <div class="col-lg-6">
                         <div class="card mb-4">
-                            <div class="card-header">
+                            <div class="card-header bg-primary text-end">
                                 <a href="#" class="btn btn-primary">?איך עושים את זה נכון</a>
-                                <h4><img src="images/card-icon-3.png" height="20">!אימות</h4>
+                                
                             </div>
-                            <div class="card-body">
+                            <div class="card-body text-end">
+                                <h4>!אימות <img src="images/card-icon-3.png" height="20"></h4>
                                 <p>:תדמיין את עצמך בתור משקיע
                                     בא אליך יזם עם מצגות ותוכניות היפותטיות שאולי מישהו
                                     ...מתישהו הולך להשתמש במוצר שלו
@@ -139,13 +104,48 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-lg-6">
+
+                        <div class="card mb-5 h-custom">
+                            <div class="card-header text-end">
+                                <h4>?יש לך רעיון מצויין לסטארטאפ
+                                    ?אבל אין לך כסף וכלים כדי להגשים אותו <img src="images/card-icon-2.png" height="20"></h4>
+                            </div>
+                            <div class="card-body">
+                                <p>,גם אנחנו היינו שם כשהתחלנו את הסטארטאפים שלנו
+                                    בזבזנו המון זמן וכסף כשלא היה לנו מושג מה באמת צריך לעשות
+                                    ,סטארטאפ זה ג'ונגל של אי וודאות שדורש מורה דרך
+                                    .כל פניה לא נכונה יכולה להוביל לטעויות קריטיות</p>
+                            </div>
+                        </div>
+
+
+                        <div class="card mb-lg-4 h-custom ">
+                            <div class="card-header text-end d-flex justify-content-end">
+                                <h4> הטעויות הנפוצות של רוב היזמים <img src="images/card-icon-1.png" height="20"></h4>
+                            </div>
+                            <div class="card-body">
+                                <p>,התעוררת עם רצון עז להגשים רעיון
+                                    ,אתה הולך למשפחה וחברים לשמוע את דעתם על הרעיון
+                                    ,מקבל מלא רוח למפרשים לדחוף את המיזם
+                                    .רואה את עצמך מתפטר וכבר מריץ אימפריה משלך
+                                    אתה מכין מצגות למשקיעים, תוכניות עסקיות
+                                    ,או שרץ לפיתוח להוציא מאות אלפי שקלים
+                                    ,אתה צריך להבין דבר אחד
+                                    משקיעים כיתתו רגליים בשביל להגיע להיות משקיעים
+                                    .תראה למשקיעה איך הכסף יחזור אליו עם רווח כפול
+                                    !כלומר תראה לו ביקוש</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <section class="process section-padding">
+    <section class="process section-padding" id="process">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7">
@@ -237,7 +237,7 @@
     </section>
 
 
-    <section class="partner section-padding pt-0">
+    <section class="partner section-padding pt-0" id="partner">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7">
@@ -262,7 +262,7 @@
     </section>
 
 
-    <div class="tabs-section section-padding">
+    <div class="tabs-section section-padding" id="tabs-section">
 
         <div class="container">
 
@@ -389,29 +389,40 @@
 
     </div>
 
-    <section class="form-section section-padding">
+    <section class="form-section section-padding" id="form-section">
         <div class="container">
             <div class="row align-items-center">
+              
+                <div class="col-lg-6">
+                    <div class="form-img text-start">
+                        <img src="images/logo-section.png" class="w-100 h-100">
+                    </div>
+                </div>
+
                 <div class="col-lg-6">
 
                     <form class="form-wrapper" action="" method="">
 
                         <h4>?מעוניין להוציא את היזם שבך !השאר פרטים וניצור קשר בהקדם</h4>
                         <div class="form-group mb-4 row">
-                            <div class="col-md-3">
-                                <label for="">:שם</label>
-                            </div>
+                           
                             <div class="col-md-9">
                                 <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="">:שם</label>
                             </div>
                         </div>
 
                         <div class="form-group mb-4 row">
-                            <div class="col-md-3">
-                                <label for="">:טלפון</label>
-                            </div>
+                            
                             <div class="col-md-9">
                                 <input type="tel" class="form-control">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="">:טלפון</label>
                             </div>
                         </div>
 
@@ -422,83 +433,115 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-6">
-                    <div class="form-img text-center">
-                        <img src="images/logo-section.png" class="w-100 h-100">
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
 <!-- FAQ Section -->
 
-    <section class="accordian-sec" id="FAQs">
-        <div class="container">
-            <div class="faq">
-                <p>שאלות נפוצות</p>
-            </div>
-            <div class="accordian-container">
+<section class="faqs section-padding">
+    <div class="container">
 
-                <button class="accordion mb-4">?מה לגבי פטנטים</button>
-                <div class="panel">
-                    <p>
-                        אנחנו לא משרד לרישום פטנטים. רישום פטנט לוקח המון זמן וכסף, אם יעתיקו אותכם זה מצויין! בסוף מה
-                        שמנצח זה לא המוצר, אלא השיווק והמכירות שלכם.
-                    </p>
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-6">
+                <div class="section-heading text-center">
+                    <h2>שאלות ותשובות <img src="images/faqs-mark.png" alt="" height="50"></h2>
                 </div>
-                <button class="accordion mb-4">?היכן ניתן למצוא לקוחות עבר שלכם</button>
-                <div class="panel">
-                    <p>
-                        שאלה מצויינת. הלוואי והיינו יכולים לתת לכם את הלקוחות המרוצים שלנו. אנחנו מכבדים את הלקוחות שלנו
-                        ושומרים על סודיות בתהליך שלנו, עם חלק
-                        מהיזמים אנחנו גם חתומים על הסכמי סודיות (NDA).
-                    </p>
-                </div>
-                <button class="accordion mb-4">?מה מיוחד בתהליך שלכם</button>
-                <div class="panel">
-                    <p>
-                        אנחנו עובדים לפי שיטה שהמון מיזמים גדולים התחילו ממנה והגיעו להצלחה. לדוגמא:
-                        Dropbox, Wolt, AirBnB, Amazon, Pinterest והרשימה עוד ארוכה . .
-                        המשקיעים אוהבים את השיטה הזאת, אנחנו מבינים את זה ופועלים לפיה
-
-                    </p>
-                </div>
-                <button class="accordion mb-4">?למה אנחנו מלווים יזמים</button>
-                <div class="panel">
-                    <p>
-                        אחרי שמכרנו את המיזם שלנו, הבנו כי אם נמשיך לעשות סטארטאפים בעצמינו אנחנו נעשה אולי עוד מיזם אחד
-                        או שניים טובים. ביחד איתכם אנחנו יכולים
-                        לעשות עשרות אם לא מאות סטארטאפים מצליחים.
-                    </p>
-                </div>
-                <button class="accordion mb-4">?אין לי זמן להשקיע במיזם, מה עושים</button>
-                <div class="panel">
-                    <p>
-                        אתה לא מצפה לעשות אקזיט מבלי להשקיע ורק לדבר על רעיונות נכון?! כל מה שצריך זה בין 6 ל 10 שעות
-                        בשבוע כדי להתחיל לעבוד על המיזם שלך.
-                    </p>
-                </div>
-                <button class="accordion mb-4">?אין לי כסף להשקיע במיזם, מה עושים</button>
-                <div class="panel">
-                    <p>
-                        כשמשקיעים יראו שאתה הוצאת כסף מהכיס האישי שלך זה יתן להם תחושת ביטחון שאתה מחוייב להצלחת המיזם
-                        שלך והם ישקיעו בך. איך אתה מצפה
-                        שמישהוא ישקיע בך אם אתה לא משקיע בעצמך? כל מה שאתה צריך כדי להתחיל זה כמה אלפי שקלים.
-                    </p>
-                </div>
-                <button class="accordion mb-4">?איפה אני יכול ללמוד עוד דברים בנושא</button>
-                <div class="panel">
-                    <p>
-                        .חפשו אותנו ביוטיוב ובספוטיפיי! שם תוכלו למצוא תוכן מקיף על עולם הסטארטאפים, בנוסף אתם מוזמנים
-                        להצטרף לקהילה שלנו בדיסקורד
-                        !כל הלינקים ממש פה למטה רק טיפה להוריד את העמוד
-                    </p>
-                </div>
-
             </div>
         </div>
-    </section>
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button text-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ?מה לגבי פטנטים
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-end">
+                            <p>
+                                אנחנו לא משרד לרישום פטנטים. רישום פטנט לוקח המון זמן וכסף, אם יעתיקו אותכם זה מצויין! בסוף מה
+                                שמנצח זה לא המוצר, אלא השיווק והמכירות שלכם.
+                            </p>
+                         </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button text-end collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          
+
+                            ?היכן ניתן למצוא לקוחות עבר שלכם
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-end">
+                            <p>
+                                שאלה מצויינת. הלוואי והיינו יכולים לתת לכם את הלקוחות המרוצים שלנו. אנחנו מכבדים את הלקוחות שלנו
+                                ושומרים על סודיות בתהליך שלנו, עם חלק
+                                מהיזמים אנחנו גם חתומים על הסכמי סודיות (NDA).
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button text-end collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            ?מה מיוחד בתהליך שלכם
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-end">
+                            <p>
+                                אחרי שמכרנו את המיזם שלנו, הבנו כי אם נמשיך לעשות סטארטאפים בעצמינו אנחנו נעשה אולי עוד מיזם אחד
+                                או שניים טובים. ביחד איתכם אנחנו יכולים
+                                לעשות עשרות אם לא מאות סטארטאפים מצליחים.
+                            </p>
+                         </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button text-end collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            ?למה אנחנו מלווים יזמים
+                          </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body text-end">
+                            <p>
+                                כשמשקיעים יראו שאתה הוצאת כסף מהכיס האישי שלך זה יתן להם תחושת ביטחון שאתה מחוייב להצלחת המיזם
+                                שלך והם ישקיעו בך. איך אתה מצפה
+                                שמישהוא ישקיע בך אם אתה לא משקיע בעצמך? כל מה שאתה צריך כדי להתחיל זה כמה אלפי שקלים.
+                            </p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button text-end collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            ?אין לי כסף להשקיע במיזם, מה עושים
+                          </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body text-end">
+                            <p>
+                                .חפשו אותנו ביוטיוב ובספוטיפיי! שם תוכלו למצוא תוכן מקיף על עולם הסטארטאפים, בנוסף אתם מוזמנים
+                                להצטרף לקהילה שלנו בדיסקורד
+                                !כל הלינקים ממש פה למטה רק טיפה להוריד את העמוד
+                            </p>
+                           </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ 
 
 
     <!-- Footer Start  -->
@@ -545,45 +588,56 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title" id="exampleModalLabel">Questionnaire for investment seekers</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header text-end">
+                    
+                    
+                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                    
+                    <h1 class="modal-title w-100" id="exampleModalLabel">שאלון למחפשי השקעה</h1>
+                    
                 </div>
                 <div class="modal-body">
                     <form action="" method="">
                         <div class="form-group row mb-4">
-                            <div class="col-md-3">
-                                <label for="">First name</label>
-                            </div>
+                           
                             <div class="col-md-9">
                                 <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-3 text-end">
+                                <label for="">שם מלא</label>
                             </div>
                         </div>
 
                         <div class="form-group row mb-4">
-                            <div class="col-md-3">
-                                <label for="">Last Name</label>
-                            </div>
+                          
                             <div class="col-md-9">
                                 <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col-md-3 text-end">
+                                <label for=""></label>
                             </div>
                         </div>
 
                         <div class="form-group row mb-4">
-                            <div class="col-md-3">
-                                <label for="">Full Name</label>
-                            </div>
+                           
                             <div class="col-md-9">
                                 <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col-md-3 text-end">
+                                <label for=""></label>
                             </div>
                         </div>
 
                         <div class="form-group row mb-4">
-                            <div class="col-md-3">
-                                <label for="">The name of the project</label>
-                            </div>
+                          
                             <div class="col-md-9">
                                 <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col-md-3 text-end">
+                                <label for="">שם המיזם</label>
                             </div>
                         </div>
 
@@ -591,94 +645,110 @@
 
 
                         <div class="form-group row mb-4">
-                            <div class="col-md-3">
-                                <label for="">Project start date</label>
-                            </div>
+                         
                             <div class="col-md-9">
                                 <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col-md-3 text-end">
+                                <label for="">תאריך תחילת המיזםe</label>
                             </div>
                         </div>
 
                         <div class="form-group row mb-4">
-                            <div class="col-md-8">
-                                <label for="">How many active customers does the project have?</label>
-                            </div>
+                        
                             <div class="col-md-4">
                                 <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col-md-8 text-end">
+                                <label for="">כמה לקוחות פעילים יש למיזם?</label>
                             </div>
                         </div>
 
                         <!-- RADIO BUTTON -->
 
                         <div class="form-group row mb-4">
-                            <div class="col-md-8">
-                                <label for="">How many partners are there in the project (including you)</label>
-                            </div>
+                           
                             <div class="col-md-4">
                                 <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col-md-8 text-end">
+                                <label for="">כמה שותפים יש במיזם (כולל אותך))</label>
                             </div>
                         </div>
 
                         <div class="form-group row mb-4">
-                            <div class="col-md-8">
-                                <label for="">How many different investors does the company have?</label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
 
-                        <div class="form-group row mb-4">
-                            <div class="col-md-8">
-                                <label for="">How much was invested in the company in total (NIS)</label>
-                            </div>
                             <div class="col-md-4">
                                 <input type="text" class="form-control">
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-4">
-                            <div class="col-md-8">
-                                <label for="">What percentage of the company will you give for the amount you
-                                    mentioned?</label>
+                            <div class="col-md-8 text-end">
+                                <label for="">כמה משקיעים שונים יש לחברה?</label>
                             </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control">
-                            </div>
+                         
                         </div>
 
                         <div class="form-group row mb-4">
                             <div class="col-md-4">
-                                <label for="">why do you need the money (2-3 sentences)</label>
+                                <input type="text" class="form-control">
                             </div>
+
+                            <div class="col-md-8 text-end">
+                                <label for="">כמה סה"כ הושקע בחברה (ש"ח)</label>
+                            </div>
+                          
+                        </div>
+
+                        <div class="form-group row mb-4">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col-md-8 text-end">
+                                <label for="">כמה אחוזים מהחברה תתן תמורתהסכום שציינת?</label>
+                            </div>
+                           
+                        </div>
+
+                        <div class="form-group row mb-4">
                             <div class="col-md-8">
                                 <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
                             </div>
+
+                            <div class="col-md-4 text-end">
+                                <label for="">למה אתה צריך את הכסף? (2-3 משפטים)</label>
+                            </div>
+                          
                         </div>
 
                         <div class="form-group row mb-4">
-                            <div class="col-md-4">
-                                <label for="">Besides the money, what other expectations are there from the investment
-                                    body?</label>
-                            </div>
                             <div class="col-md-8">
                                 <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
                             </div>
+
+                            <div class="col-md-4 text-end">
+                                <label for="">מלבד הכסף, אילו עוד ציפיות יש מגוף ההשקעה?</label>
+                            </div>
+                          
                         </div>
 
                         <div class="form-group row mb-4">
-                            <div class="col-md-4">
-                                <label for="">Is there anything else we should know?</label>
-                            </div>
+                         
                             <div class="col-md-8">
                                 <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <label for="">האם יש עוד משהו שאנו צריכים לדעת?</label>
                             </div>
                         </div>
 
                         <div class="form-group row mb-4 justify-content-center">
 
                             <div class="col-md-6 text-center">
-                                <button type="submit" class="form-btn">Submit The Form</button>
+                                <button type="submit" class="form-btn">שלח את הטופס</button>
                             </div>
                         </div>
 
