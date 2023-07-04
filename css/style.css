@@ -16,7 +16,16 @@ body {
     flex-direction: column;
     height: 100%;
     font-family: Tahoma !important;
+    background-image: url('../images/team-blur-bg.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    /* background-repeat: no-repeat; */
 
+}
+
+.no-bg {
+    background-image: none !important;
 }
 
 .section-heading h2 {
@@ -45,8 +54,12 @@ body {
     padding: 230px 0; 
     background-size: cover;
     background-position: center center;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, .3)), url('../images/hero-bg.png');
+    background-attachment: fixed;
+    background-image: url('../images/hero-bg.png');
 }
+
+
+
 
 .hero-main .hero-content h1 {
     color: rgba(0,0,0,1); 
@@ -85,13 +98,18 @@ body {
 }
 
 .about .about-content .card .card-header {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.about .about-content .card .card-header {
     border: none;
 }
 
 .about .about-content .card .card-header h4 {
     color: rgba(0,0,0,1); 
     font-weight: bold;
-    font-size: 18px; 
+    font-size: 22px; 
     letter-spacing: 0.03px;
     display: flex;
     /* align-items: center; */
@@ -303,6 +321,17 @@ footer .social-media p {
     font-weight: bold;
     font-size: 16px;
     
+}
+
+footer .social-media .social-icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+footer .social-media .social-icon img {
+    width: 40px;
 }
 
 .modal-content {
