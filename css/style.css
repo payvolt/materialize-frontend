@@ -385,11 +385,19 @@ footer .social-media .social-icon img {
 
 .our-guide .form-heading p {
     font-size: 20px; 
+} 
+
+
+.other-tab h6 {
+    font-weight: bold;
+    font-size: 20px;
+    color: #000; 
 }
-/* Accordian */
 
-
-
+.other-tab ul li {
+    font-size: 16px;
+    font-weight: bold;
+}
 
 .accordion-button::after {
     margin-left: 10px;
