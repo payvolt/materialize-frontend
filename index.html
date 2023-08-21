@@ -1,1096 +1,632 @@
 <!DOCTYPE html>
-<html lang="heb">
+<html lang="he">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLF0P0TZXM"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-CLF0P0TZXM');
-        </script>
-    <!--clarity-->
-        <script type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "g4j42fkfqt");
-        </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content="הבית שלך לסטארטאפ הבא"/>
-    <meta name="author" content=""/>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <meta charset="utf-8">
     <title>Materialize</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="startup" name="keywords">
+    <meta content="הבית החם לסטארטאפ שלך" name="description">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
-          integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-    <!-- Including CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"
-          type="text/css"/>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-          type="text/css"/>
-    <!-- Meta Pixel Code --> <script> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '237018182485197'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=237018182485197&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code -->
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script>  
+        let isDown = false;
+        let isPhone = false;
+        function logoChange() {
+            if(isPhone) {
+                return;
+            }
+            if(window.scrollY>30) {
+                if(isDown===false) {
+                    let logo = document.getElementById("logo-img");
+                    logo.setAttribute("src","./img/materialize-logo-primary.png");
+                    isDown = true;
+                }
+                
+            } else {
+                if(isDown===true) {
+                    let logo = document.getElementById("logo-img");
+                    logo.setAttribute("src","./img/materialize-logo-white.png");
+                    isDown = false;
+                }
+            }
+            
+        }
+
+        function phoneCheck() {
+            if(window.innerWidth<900 && !isPhone) {
+                isPhone = true;
+                let logo = document.getElementById("logo-img");
+                logo.setAttribute("src","./img/materialize-logo-primary.png");
+            }
+        }
+    </script>
 </head>
 
-<body>
-
-<!-- Header Start -->
-
-<header>
-    <nav class="navbar navbar-expand-lg bg-light fixed-top  shadow">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="" height="60">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav" dir="rtl">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" aria-current="page" href="#process">שירותים</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="guide.html">מדריך לקוחות</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="video.html">מדריך משקיעים</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#tabs-section">הצוות שלנו</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">מחפשי
-                            השקעה</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#form-section">צור קשר</a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
-</header>
-
-<section class="hero-main">
-    <div class="container">
-        <div class="row justify-content-end align-content-center">
-
-            <div class="col-lg-6">
-                <div class="hero-content text-end">
-                    <h1><span>מרעיון <br></span> לסטארטאפ</h1>
-                    <p>תוכנית מותאמת אישית <br>
-                        שתעזור לך לגייס לקוחות <br>
-                        ותגרום למשקיעים לרדוף אחריך</p>
-                    <a href="#form-section" class="btn btn-primary">!אני רוצה פגישת ייעוץ חינם</a>
-                </div>
+<body onscroll="logoChange()">
+    
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
-    </div>
-</section>
+        <!-- Spinner End -->
 
-<!-- Header End  -->
 
-<section class="about section-padding" id="about">
-    <div class="container">
-        <div class="about-content" dir="rtl">
-            <div class="row">
-
-                <div class="col-xl-6">
-
-                    <div class="card mb-5 h-custom mt-0" dir="rtl">
-                        <div class="card-header d-flex align-items-center bg-white text-end">
-                            <h1 style="display: inline;"><i
-                                    class="bi-patch-question about-icon text-primary"></i></h1>
-                            <h4 style="display: inline;">
-                                יש לך רעיון מצויין לסטארטאפ? <br>
-                                אבל אין לך כסף וכלים כדי להגשים אותו?
-                            </h4>
-                        </div>
-                        <div class="card-body fw-bold">
-                            <p>גם אנחנו היינו שם כשהתחלנו את הסטארטאפים שלנו,
-                                בזבזנו המון זמן וכסף כשלא היה לנו מושג מה באמת צריך לעשות.
-                                סטארטאפ זה ג'ונגל של אי וודאות שדורש מורה דרך,
-                                כל פניה לא נכונה יכולה להוביל לטעויות קריטיות.</p>
-                        </div>
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0" >
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <img src="./img/materialize-logo-white.png" id="logo-img" style="float:left" onload="phoneCheck()"/>
+                    <h1 class="mt-2 mb-0 ml-5 mr-0">Materialize</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">ראשי</a>
+                        <a href="#about" class="nav-item nav-link">מי אנחנו</a>
+                        <a href="#services" class="nav-item nav-link">שירותים</a>
+                        <a href="#projects" class="nav-item nav-link">פרוייקטים</a>
+                        <!-- <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="404.html" class="dropdown-item">404 Page</a>
+                            </div>
+                        </div> -->
+                        <a href="#contact" class="nav-item nav-link">צור קשר</a>
                     </div>
+                    <!-- <butaton type="button" class="btn text-secondary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+                    <a href="https://htmlcodex.com/startup-company-website-template" class="btn btn-secondary text-light rounded-pill py-2 px-4 ms-3">Pro Version</a> -->
+                </div>
+            </nav>
 
-
-                    <div class="card h-custom" dir="rtl">
-                        <div class="card-header d-flex align-items-center bg-white text-end ">
-                            <h1 style="display: inline;"><i class="bi-person-x about-icon text-primary"></i></h1>
-                            <h4 style="display: inline;"> הטעויות הנפוצות של רוב היזמים</h4>
+            <div class="container-xxl py-5 bg-primary hero-header mb-5" dir="rtl">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-lg-6 text-center text-lg-end">
+                            <h1 class="text-white mb-4 animated zoomIn">כל מה שהסטאראפ שלך צריך</h1>
+                            <h2 class="text-white mb-4 animated zoomIn">המשקיעים שלנו מחכים לך!</h2>
+                            <p class="text-white pb-3 animated zoomIn">
+                                ליווי צמוד של יועצים עם ניסיון מוכח ביזמות, שעשו אקזיט והובילו עשרות פרוייקטים אשר יובילו גם אותך להצלחה.
+                            </p>
+                            <p class="text-white pb-3 animated zoomIn">
+                                תן לצוות המקצועי שלנו לעזור לך לעשות סטארטאפ מצליח.
+                            </p>
+                            <a href="#contact" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">אני רוצה פגשית ייעוץ חינם!</a>
+                            <!-- <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a> -->
                         </div>
-                        <div class="card-body fw-bold">
-                            <p>התעוררת עם רצון עז להגשים רעיון.
-                                אתה הולך למשפחה וחברים לשמוע את דעתם על הרעיון,
-                                מקבל מלא רוח למפרשים לדחוף את המיזם,
-                                רואה את עצמך מתפטר וכבר מריץ אימפריה משלך.
-                                אתה מכין מצגות למשקיעים, תוכניות עסקיות
-                                או שרץ לפיתוח להוציא מאות אלפי שקלים.
-                                אתה צריך להבין דבר אחד,
-                                משקיעים כיתתו רגליים בשביל להגיע להיות משקיעים.
-                                תראה למשקיע איך הכסף יחזור אליו עם רווח כפול,
-                                כלומר תראה לו ביקוש!</p>
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <img class="img-fluid" src="img/hero.png" alt="">
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
 
-                <div class="col-xl-6">
-                    <div class="card mb-4 mt-3">
-                        <div class="card-header text-end" dir="rtl" style="margin-top: -20px">
-                            <h4 class="text-light text-end">איך עושים את זה נכון?</h4>
+
+        <!-- Full Screen Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width: 600px;">
+                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                            <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
                         </div>
-                        <div class="card-body text-end" dir="rtl">
-                            <div class="d-flex align-items-center">
-                                <h1 style="display: inline;"><i
-                                        class="bi-clipboard-check text-primary about-icon"></i></h1>
-                                <h4 style="display: inline;font-weight: bolder;">אימות! </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Full Screen Search End -->
+
+
+        <!-- About Start -->
+        <div class="container-xxl py-5" id="about">
+            <div class="container px-lg-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" dir="rtl">
+                        <div class="section-title position-relative mb-4 pb-2">
+                            <h6 class="position-relative text-primary ps-4">מי אנחנו</h6>
+                            <h2 class="mt-2">מעל ל 7 שנות ניסיון ועשרות פרוייקטים בעולם היזמות!</h2>
+                        </div>
+                        <p class="mb-4">
+                            קבוצת מטריאלייז מהוה מסננת למשקיעים פרטיים, אנג'לים וקרנות הון סיכון. בעזרת תהליך יחודי לפי דרישות המשקיע אנו נעזור לך לגייס השקעה בדרך הנכונה והמהירה ביותר עבורך.
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>ליווי צמוד</h6>
+                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>שותפים לדרך</h6>
                             </div>
-                            <div class="fw-bold">
-                                <p>תדמיין את עצמך בתור משקיע.
-                                    בא אליך יזם עם מצגות ותוכניות היפותטיות שאולי מישהו
-                                    מתישהו הולך להשתמש במוצר שלו...
-                                    ובא אליך יזם עם רשימת המתנה או אפילו לקוחות שכבר שילמו מקדמה בשביל לקבל גישה למוצר
-                                    שלו בין הראשונים.</p>
-                                <p>במי אתה היית משקיע?
-                                    לפני שמכינים מצגות, תוכניות עסקיות ובונים מוצר,
-                                    מוודאים שיש אנשים שירצו את המוצר שלך
-                                    ויהיו מוכנים לשלם עבורו.
-                                    כאן אתה יכול להבין אם הרעיון שלך טוב או לא
-                                    בלי להוציא מאות אלפי שקלים ולבזבז זמן על משהו לא רלוונטי.</p>
-                            </div>
-                            <div class="embed-responsive embed-responsive-21by9">
-                                <iframe width="560" height="230" src="https://www.youtube.com/embed/VSwNN6tRq-E"
-                                        class="rounded mt-2 mb-2" title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        style="aspect-ratio: 16 /9; width: 100%;" allowfullscreen></iframe>
+                            <div class="col-sm-6">
+                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>צוות מומחים</h6>
+                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>פתרונות הנדסה</h6>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="process section-padding" id="process">
-    <div class="p-5"></div>
-
-    <div class="container" dir="rtl">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="section-heading text-center">
-                    <h2>איזה תהליך אתה הולך לעבור</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" style="margin-bottom: 150px;" id="processRow">
-
-            <div class="col-lg-3 mb-4 col-md-6 col-12">
-                <div class="process-card text-center">
-                    <h1 style="display: inline;"><i class="bi-cart4 m-auto text-primary"></i></h1>
-                    <h5>אימות שוק</h5>
-                    <p class="fw-bold">נבין את גודל השוק והפוטנציאל לפריצה
-                        עולמית</p>
-
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-4 col-md-6 col-12">
-                <div class="process-card text-center">
-                    <h1 style="display: inline;"><i class="bi-journal-arrow-up m-auto text-primary"></i></h1>
-                    <h5>תוכנית עבודה</h5>
-                    <p class="fw-bold">נבנה תוכנית מלאה למיזם שלך עד שלב גיוס המשקיעים ופיתוח המוצר</p>
-
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-4 col-md-6 col-12">
-                <div class="process-card text-center">
-                    <h1 style="display: inline;"><i class="bi-send-check m-auto text-primary"></i></h1>
-                    <h5>אימות רעיון</h5>
-                    <p class="fw-bold">נבין מה הלקוחות הפוטנציאלים שלך רוצים ועבור מה ישלמו לך כסף</p>
-
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-4 col-md-6 col-12">
-                <div class="process-card text-center">
-                    <h1 style="display: inline;"><i class="bi-box-seam m-auto text-primary"></i></h1>
-                    <h5>תכנון מוצר</h5>
-                    <p class="fw-bold">נתכנן את המוצר הסופי שלך יחד עם מהנדסים </p>
-
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-4 col-md-6 col-12">
-                <div class="process-card text-center">
-                    <h1 style="display: inline;"><i class="bi-graph-up-arrow m-auto text-primary"></i></h1>
-                    <h5>הזנקת הרעיון</h5>
-                    <p class="fw-bold">נגייס לקוחות למוצר הראשוני שלך </p>
-
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-4 col-md-6 col-12">
-                <div class="process-card text-center">
-                    <h1 style="display: inline;"><i class="bi-list-ol m-auto text-primary"></i></h1>
-                    <h5>אסטרטגיה</h5>
-                    <p class="fw-bold">נבנה אסטרטגיה עסקית מלאה למיזם שלך</p>
-
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-4 col-md-6 col-12">
-                <div class="process-card text-center">
-                    <h1 style="display: inline;"><i class="bi-coin m-auto text-primary"></i></h1>
-                    <h5>משקיעים</h5>
-                    <p class="fw-bold">הכנה למשקיעים
-                        וגיוס כספים
-                        בליווי עו"ד</p>
-
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-4 col-md-6 col-12">
-                <div class="process-card text-center">
-                    <h1 style="display: inline;"><i class="bi-rocket-takeoff m-auto text-primary"></i></h1>
-                    <h5>פיתוח מוצר</h5>
-                    <p class="fw-bold">פיתוח וייצור של המוצר שלך לפריצה לשוק העולמי</p>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<section class="partner section-padding" id="partner">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-7">
-                <div class="section-heading text-center">
-                    <h2>שותפים עסקיים</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4 mb-lg-0 mb-5 text-center">
-                <img src="images/partner-1.png" height="170">
-            </div>
-            <div class="col-md-4 mb-lg-0 mb-5 text-center">
-                <img src="images/partner-2.png" height="170">
-            </div>
-            <div class="col-md-4 mb-lg-0 mb-5 text-center">
-                <img src="images/partner-3.png" height="170">
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="mb-5" id="tabs-section"></div>
-<section class="tabs-section section-padding">
-
-    <div class="container" style="margin-top: 170px;margin-bottom: 200px;padding: 0 30px">
-
-        <div class="tabs-head">
-            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link  border-custom-1" id="profile-tab" data-bs-toggle="tab"
-                            data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
-                            aria-selected="false">היכולות שלנו
-                    </button>
-                </li>
-
-                <li class="nav-item " role="presentation">
-                    <button class="nav-link active  border-custom-2" id="home-tab" data-bs-toggle="tab"
-                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
-                            aria-selected="true">?מי אנחנו
-                    </button>
-                </li>
-
-            </ul>
-        </div>
-
-        <div class="tab-body">
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane team-tab fade show active" id="home-tab-pane" role="tabpanel"
-                     aria-labelledby="home-tab" tabindex="0">
-
-                    <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <h6 class="mb-3">נעים להכיר! אנחנו מטריאלייז. חברת השקעות, ייעוץ והזנקות של סטארטאפים.
-                                בית הנדסה - תוכנה, חומרה, אלקטרוניקה ועוד. אנו מלווים יזמים מתחילים בפן העסקי
-                                והטכני יחדיו</h6>
+                        <div class="d-flex align-items-center mt-4" id="contact">
+                            <a class="btn btn-primary rounded-pill px-4 me-3" href="https://materialize.name/1691826307674" target="_blank">מדריך חינם להשקעות</a>
+                            <a class="btn btn-outline-primary btn-square me-3" href="https://www.facebook.com/profile.php?id=100089729137037" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-3" href="https://www.youtube.com/@Materialize.services" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-3" href="https://www.instagram.com/kirilyoanidi/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-3" href="https://www.linkedin.com/company/materialize-services/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about.jpg" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
 
-                    <hr>
-                    <br>
 
-                    <div class="row my-3" dir="rtl">
+        <!-- Newsletter Start -->
+        <div class="container-xxl bg-primary newsletter my-5 wow fadeInUp" data-wow-delay="0.1s" dir="rtl">
+            <div class="container px-lg-5">
+                <div class="row align-items-center" style="height: 250px;">
+                    <div class="col-12 col-md-6">
+                        <h3 class="text-white">מעוניין להוציא את היזם שבך?</h3>
+                        <small class="text-white">הכנס טלפון + שם ולחץ על המטוס!</small>
+                        <div class="position-relative w-100 mt-3">
+                            <form action="https://formsubmit.co/kiril.yoanidi@materialize.services" method="POST">
+                                <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5 mt-3" type="text" id="sitelead" name="sitelead" placeholder="הכנס שם + טלפון" style="height: 48px;">
+                                <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                            </form>
+                        </div>
                         
-
-                        
-
-                        
-
-                        <div class="col-md-3 mb-4">
-                            <a href="team-1.html" class="team-profile text-center">
-                                <img src="images/team-1.png" width="150" class="mb-4">
-                                <h4>קיריל יואנידי
-                                </h4>
-                                <h5> CEO </h5>
-                                <p class="p fw-bold">
-                                    שש שנות ניסיון
-                                    <br>
-                                    בפיתוח וניהול
-                                    <br>
-                                    מוצר, מקים
-                                    <br>
-                                    סטארטאפ מצליח <br>שנמכר.
-                                </p>
-
-                            </a>
-                        </div>
-
-                        <div class="col-md-3 mb-4">
-                            <a href="team-2.html" class="team-profile text-center">
-                                <img src="images/team-2.png" width="150" class="mb-4">
-                                <h4>מישל מולביץ'
-                                </h4>
-                                <h5> COO </h5>
-                                <p class="p fw-bold">
-                                    ניהול עובדים, שירות
-                                    <br>
-                                    לקוחות ומחלקת
-                                    <br>
-                                    מכירות עם ניסיון רב
-                                    <br>
-                                    ומגוון בתחום.
-
-                                </p>
-
-                            </a>
-                        </div>
-
-                        <div class="col-md-3 mb-4">
-                            <a href="team-3.html" class="team-profile text-center">
-                                <img src="images/team-4.png" width="150" class="mb-4">
-                                <h4>יאיר זעפרני
-                                </h4>
-                                <h5>CTO
-                                </h5>
-                                <p class="p fw-bold">
-                                    מוביל פרויקטיים של תוכנה וחשמל
-                                    <br>
-                                    ניסיון רב בסטארטאפים <br>
-                                    שונים.
-                                </p>
-
-                            </a>
-                        </div>
-
-                        <div class="col-md-3 mb-4">
-                            <a href="team-4.html" class="team-profile text-center">
-                                <img src="images/team-3.png" width="150" class="mb-4">
-                                <h4>סרגיי שבלין
-
-                                </h4>
-                                <h5>CKO </h5>
-                                <p class="p fw-bold">
-                                    מוביל פרויקטים הנדסיים <br>
-                                    ומנהל ידע, מעל לשש שנות <br>
-                                    ניסיון <br>
-                                    בפיתוח מוצרים <br>
-                                    מכניים.
-                                </p>
-
-                            </a>
-                        </div>
-
+                    </div>
+                    <div class="col-md-6 text-center mb-n5 d-none d-md-block">
+                        <img class="img-fluid mt-5" style="height: 250px;" src="img/newsletter.png">
                     </div>
                 </div>
-                <div class="tab-pane other-tab fade" id="profile-tab-pane" role="tabpanel"
-                     aria-labelledby="profile-tab" tabindex="0">
+            </div>
+        </div>
+        <!-- Newsletter End -->
 
-                    <div class="row justify-content-center">
-                        <div class="col-md-10 text-center">
-                            <h6 class="mb-3">נעים להכיר! אנחנו מטריאלייז, חברת השקעות, ייעוץ והזנקות של סטארטאפים
-                                .ובית הנדסה - תוכנה, חומרה, אלקטרוניקה ועוד. אנו מלווים יזמים מתחילים בפן העסקי
-                                והטכני יחדיו</h6>
+
+        <!-- Service Start -->
+        <div class="container-xxl py-5" id="services" dir="rtl">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">השירותים שלנו</h6>
+                    <h2 class="mt-2">איזה תהליך אתה הולך לעבור</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="bi-cart4 fa-2x"></i>
+                                
+                            </div>
+                            <h5 class="mb-3">אימות שוק</h5>
+                            <p>נבין את גודל השוק והפוטנציאל לפריצה עולמית</p>
+                            <!-- <a class="btn px-3 mt-auto mx-auto" href="">Read More</a> -->
                         </div>
                     </div>
+                    <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="bi-journal-arrow-up fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">תוכנית עבודה</h5>
+                            <p>נבנה תוכנית מלאה למיזם שלך עד שלב גיוס המשקיעים ופיתוח המוצר</p>
+                            <!-- <a class="btn px-3 mt-auto mx-auto" href="">Read More</a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="bi-send-check fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">אימות רעיון</h5>
+                            <p>נבין מה הלקוחות הפוטנציאלים שלך רוצים ועבור מה ישלמו לך כסף</p>
+                            <!-- <a class="btn px-3 mt-auto mx-auto" href="">Read More</a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="bi-box-seam fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">תכנון מוצר</h5>
+                            <p>נתכנן את המוצר הסופי שלך יחד עם מהנדסים</p>
+                            <!-- <a class="btn px-3 mt-auto mx-auto" href="">Read More</a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="bi-graph-up-arrow fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">הזנקת הרעיון</h5>
+                            <p>נגייס לקוחות למוצר הראשוני שלך</p>
+                            <!-- <a class="btn px-3 mt-auto mx-auto" href="">Read More</a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="bi-list-ol fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">אסטרטגיה</h5>
+                            <p>נבנה אסטרטגיה עסקית מלאה למיזם שלך</p>
+                            <!-- <a class="btn px-3 mt-auto mx-auto" href="">Read More</a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="bi-coin fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">משקיעים</h5>
+                            <p>הכנה למשקיעים וגיוס כספים בליווי עו"ד</p>
+                            <!-- <a class="btn px-3 mt-auto mx-auto" href="">Read More</a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="bi-rocket-takeoff fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">פיתוח מוצר</h5>
+                            <p>פיתוח וייצור של המוצר שלך לפריצה לשוק העולמי</p>
+                            <!-- <a class="btn px-3 mt-auto mx-auto" href="">Read More</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
 
-                    <hr>
-                    <br>
 
+        <!-- Portfolio Start -->
+        <div class="container-xxl py-5" id="projects">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s" dir="rtl">
+                    <h6 class="position-relative d-inline text-primary ps-4">המיזמים שלנו</h6>
+                    <h2 class="mt-2">חלק מהסטארטאפים של הלקוחות שלנו</h2>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-12 text-center">
+                        <ul class="list-inline mb-5" id="portfolio-flters">
+                            <li class="btn px-3 pe-4 active" data-filter="*">All</li>
+                            <li class="btn px-3 pe-4" data-filter=".first">B2B</li>
+                            <li class="btn px-3 pe-4" data-filter=".second">B2C</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row g-4 portfolio-container">
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/payvolt.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/payvolt.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Crypto based monetization system</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://payvolt.io">Payvolt.io</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/giftgala.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/giftgala.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>digital wedding gifts</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://gift-sending-app.framer.ai/">GiftGala</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/artilab.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/artilab.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>smart sales calls</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://www.artilab.xyz/">Artilab.ai</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/leadog.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/leadog.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>dog training network</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://leadog-dog-training-leads.framer.ai/">Leadog</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/innosmart.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/innosmart.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Automotive services solutions</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">InnoSmart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/prompteer.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/prompteer.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>prompt sharing and engineering network</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://prompteer.framer.ai/">Prompteer.ai</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio End -->
+
+
+        <!-- Testimonial Start -->
+        <div class="container-xxl bg-primary testimonial py-5 my-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Professionals, excellent and fast service. They know the field and have a lot of value to provide to people at the beginning of their journey. Recommend!</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/avi.png" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">אבי גולברג</h6>
+                                <small>artilab.ai</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Kirill and Michel the guns 💪 always ready to help and promote..always with a smile always a good atmosphere..a pleasure to work with them!!</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/netanel.png" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">נתנאל אהרון</h6>
+                                <small>DualScreen</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>After several consultants in the field of startups, I came to a professional company, with a precise process, which knows how to target exactly the right steps of establishing a startup without throwing away money</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">יחיעם פלדהיים</h6>
+                                <small>Traveller</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Kirill is a first class professional. Provides professional and wholehearted service with advice, tips and ideas that are worth their weight in gold! I warmly and wholeheartedly recommend using his services</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/leameller.png" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">לארה מלר</h6>
+                                <small>smartwear</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+
+        <!-- Team Start -->
+        <div class="container-xxl py-5" id="team">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">הצוות שלנו</h6>
+                    <h2 class="mt-2">הכר את המומחים שילוו אותך</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                    <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-facebook-f"></i></a> -->
+                                    <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a> -->
+                                    <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a> -->
+                                    <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/yair-zafrany-8a207b192/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <img class="img-fluid rounded w-100" src="img/yair.png" alt="">
+                            </div>
+                            <div class="px-4 py-3">
+                                <h5 class="fw-bold m-0">יאיר זעפרני</h5>
+                                <small>CTO</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                    <a class="btn btn-square text-primary bg-white my-1" href="https://www.facebook.com/kiril.Yoanidi/"><i class="fab fa-facebook-f"></i></a>
+                                    <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a> -->
+                                    <a class="btn btn-square text-primary bg-white my-1" href="https://www.instagram.com/kirilyoanidi/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/kiril-yoanidi-380633222/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <img class="img-fluid rounded w-100" src="img/kiril.png" alt="">
+                            </div>
+                            <div class="px-4 py-3">
+                                <h5 class="fw-bold m-0">קיריל יואנידי</h5>
+                                <small>CEO</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="team-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                    <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-facebook-f"></i></a> -->
+                                    <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a> -->
+                                    <a class="btn btn-square text-primary bg-white my-1" href="https://www.instagram.com/mishel_l23/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a> -->
+                                </div>
+                                <img class="img-fluid rounded w-100" src="img/mishel.png" alt="">
+                            </div>
+                            <div class="px-4 py-3">
+                                <h5 class="fw-bold m-0">'מישל מולביץ</h5>
+                                <small>COO</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>Shaul HaMelech 35 (floor 6), Tel-Aviv</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>052-6918223</p>
+                        <p><i class="fa fa-envelope me-3"></i>kiril.yoanidi@materialize.services</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://chat.whatsapp.com/Ik95kPacZom7nC3PGrT45j" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://discord.gg/4ykG2pkSVJ" target="_blank"><i class="bi bi-discord"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@kiril.yoanidi" target="_blank"><i class="bi bi-tiktok"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/kiril.Yoanidi/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@Materialize.services" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/kirilyoanidi/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/kiril-yoanidi-380633222/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Popular Link</h5>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Career</a>
+                    </div> -->
+                    <!-- <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Portfolio</h5>
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/artilab.png" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/payvolt.png" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/prompteer.png" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/leadog.png" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/innosmart.png" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/giftgala.png" alt="Image">
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-6 col-lg-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Join our news letter and get all the hot news in the startup world.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <form action="https://formsubmit.co/kiril.yoanidi@materialize.services" method="POST">
+                                <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" id="newsemail" name="newsemail" type="email" placeholder="Your Email" style="height: 48px;">
+                                <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
                     <div class="row">
-                        <div class="col-md-8">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                                    <img src="images/app-2.gif" class="img-fluid" alt="">
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                                    <img src="images/app-code.gif" class="img-fluid" alt="">
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                                    <img src="images/app-1.gif" class="img-fluid" alt="">
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                                    <img src="images/cnc-1.gif" class="img-fluid" alt="">
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                                    <img src="images/drone-sim.gif" class="img-fluid" alt="">
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                                    <img src="images/pipe_holder.gif" class="img-fluid" alt="">
-                                </div>
-                            </div>
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Materialize.services</a>, All Right Reserved. 
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                         </div>
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <ul class="text-end list-unstyled">
-                                        <li class="mb-4">אלקטרוניקה <img class="ms-3" width="28"
-                                                                         src="images/icon-processor.png" alt=""></li>
-                                        <li class="mb-4">הדמיה <img class="ms-3" width="28" src="images/icon-plane.png"
-                                                                    alt=""></li>
-                                        <li class="mb-4">קריאייטיב <img class="ms-3" width="28"
-                                                                        src="images/icon-pizza.png" alt=""></li>
-                                        <li class="mb-4">מכני <img class="ms-3" width="28" src="images/icon-cog.png"
-                                                                   alt=""></li>
-                                        <li class="mb-4">גרפיקה <img class="ms-3" width="28" src="images/icon-img.png"
-                                                                     alt=""></li>
-                                        <li class="mb-4">סושיאל <img class="ms-3" width="28" src="images/icon-users.png"
-                                                                     alt=""></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6">
-                                    <ul class="text-end list-unstyled">
-                                    <li class="mb-4">תוכנה <img class="ms-3" width="28" src="images/icon-code.png"
-                                                                alt=""></li>
-                                    <li class="mb-4">בינה מלאכותית <img class="ms-3" width="28"
-                                                                        src="images/icon-fingerprint.png" alt=""></li>
-                                    <li class="mb-4">שיווק <img class="ms-3" width="28" src="images/icon-chat.png"
-                                                                alt=""></li>
-                                    <li class="mb-4">חומרה <img class="ms-3" width="28" src="images/icon-wifi.png"
-                                                                alt=""></li>
-                                    <li class="mb-4">סימוליצה <img class="ms-3" width="28" src="images/icon-game.png"
-                                                                   alt=""></li>
-                                    <li class="mb-4">מכירות <img class="ms-3" width="28" src="images/icon-call.png"
-                                                                 alt=""></li>
-                                    </ul>
-                                </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
+        <!-- Footer End -->
 
 
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
     </div>
 
-
-</section>
-
-<section class="form-section section-padding" style="margin-bottom: 200px" id="form-section">
-    <div class="p-5"></div>
-    <div class="container">
-        <div class="row align-items-center">
-
-            <div class="col-lg-6">
-                <div class="form-img text-start">
-                    <img src="images/logo-section.png" class="w-100 h-100">
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-
-                <form class="form-wrapper text-center align-items-center" dir="rtl" action="https://formsubmit.co/kiril.yoanidi@materialize.services"
-                      method="POST">
-
-                    <h4>מעוניין להוציא את היזם שבך?
-                        <br>
-                        השאר פרטים וניצור קשר בהקדם!</h4>
-                    <div class="form-group mb-4 row">
-                        <div class="col-md-3">
-                            <label for="firstName">שם:</label>
-                        </div>
-
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder=""
-                                   value="" required>
-                            <div class="invalid-feedback">
-                                Valid first name is required.
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group mb-4 row">
-                        <div class="col-md-3">
-                            <label for="phone">טלפון:</label>
-                        </div>
-
-                        <div class="col-md-9">
-                            <input type="tel" class="form-control" name="phone" placeholder="05XXXXXXXX"
-                                   required>
-                            <div class="invalid-feedback" style="width: 100%;">
-                                Your phone is required.
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group mb-4 row justify-content-center">
-                        <div class="col-lg-8 text-center">
-                            <button type="submit" class="form-btn">אני רוצה פגישת ייעוץ חינם!</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ Section -->
-
-<section class="faqs section-padding" style="margin-bottom: 70px">
-    <div class="container">
-
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="section-heading text-center">
-                    <h2>שאלות ותשובות <img src="images/faqs-mark.png" alt="" height="50"></h2>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button text-end fw-bold collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
-                                    aria-controls="collapseOne">
-                                ?מה לגבי פטנטים
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body text-end fw-bold" dir="rtl">
-                                <p>
-                                    אנחנו לא משרד לרישום פטנטים. רישום פטנט לוקח המון זמן וכסף, אם יעתיקו אותכם זה
-                                    מצויין! בסוף מה שמנצח זה לא המוצר, אלא השיווק והמכירות שלכם
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button text-end collapsed fw-bold" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                                    aria-controls="collapseTwo">
-
-
-                                ?היכן ניתן למצוא לקוחות עבר שלכם
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body text-end fw-bold" dir="rtl">
-                                <p>
-                                    שאלה מצויינת. הלוואי והיינו יכולים לתת לכם את הלקוחות המרוצים שלנו. אנחנו מכבדים את
-                                    הלקוחות שלנו ושומרים על סודיות בתהליך שלנו, עם חלק
-                                    מהיזמים אנחנו גם חתומים על הסכמי סודיות (NDA).
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button text-end collapsed fw-bold" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false"
-                                    aria-controls="collapse4">
-                                ?מה מיוחד בתהליך שלכם
-                            </button>
-                        </h2>
-                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body text-end fw-bold" dir="rtl">
-                                <p>
-                                    אנחנו עובדים לפי שיטה שהמון מיזמים גדולים התחילו ממנה והגיעו להצלחה. לדוגמא:
-                                    Dropbox, Wolt, AirBnB, Amazon, Pinterest והרשימה עוד ארוכה.
-                                     המשקיעים אוהבים את
-                                    השיטה הזאת, אנחנו מבינים את זה ופועלים לפיה.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button text-end collapsed fw-bold" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false"
-                                    aria-controls="collapse5">
-                                ?למה אנחנו מלווים יזמים
-                            </button>
-                        </h2>
-                        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body text-end fw-bold" dir="rtl">
-                                <p>
-                                    אחרי שמכרנו את המיזם שלנו, הבנו כי אם נמשיך לעשות סטארטאפים בעצמינו אנחנו נעשה אולי
-                                    עוד מיזם אחד או שניים טובים. ביחד איתכם אנחנו יכולים
-                                    לעשות עשרות אם לא מאות סטארטאפים מצליחים.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button text-end collapsed fw-bold" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false"
-                                    aria-controls="collapse6">
-                                ?אין לי זמן להשקיע במיזם, מה עושים
-                            </button>
-                        </h2>
-                        <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body text-end fw-bold" dir="rtl">
-                                <p>
-                                    אתה לא מצפה לעשות אקזיט מבלי להשקיע ורק לדבר על רעיונות נכון?! אתה לא צריך יותר משעה ביום כדי להתחיל לעבוד על המיזם שלך.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button text-end collapsed fw-bold" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false"
-                                    aria-controls="collapse7">
-                                ?איפה אני יכול ללמוד עוד דברים בנושא
-                            </button>
-                        </h2>
-                        <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body text-end fw-bold" dir="rtl">
-                                <p>
-                                    חפשו אותנו ביוטיוב ובספוטיפיי! שם תוכלו למצוא תוכן מקיף על עולם הסטארטאפים, בנוסף
-                                    אתם מוזמנים להצטרף לקהילה שלנו בדיסקורד.
-                                    כל הלינקים ממש פה למטה רק טיפה להוריד את העמוד!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Footer Start  -->
-<footer id="footer" class="footer-main py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4 mb-md-0 mb-5">
-                <div class="footer-link">
-                    <ul class="ps-0 list-unstyled text-center text-lg-start">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Terms Of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-
-                <p class="copyright-text text-center text-lg-start text-sm-center text-md-center"
-                   style="font-size: small">
-                    © Materialize 2023. All Rights Reserved.
-                </p>
-            </div>
-            <div class="col-lg-4 mb-md-0 mb-5">
-                <div class="social-media text-lg-center text-center">
-                    <p>
-                        KIRIL.YOANIDI@MATERIALIZE.SERVICES<br>Shaul HaMelech 35 (floor 6), tel: 052-6918223
-                    </p>
-
-                    <div class="social-icon text-center text-lg-start">
-                        <a href="https://chat.whatsapp.com/Ik95kPacZom7nC3PGrT45j" target="_blank"><i
-                                class="bi-whatsapp fs-2"></i></a>
-                        <a href="https://www.facebook.com/kiril.Yoanidi/" target="_blank"><i
-                                class="bi-facebook fs-2"></i></a>
-                        <a href="https://www.linkedin.com/in/kiril-yoanidi-380633222/" target="_blank"><i
-                                class="bi-linkedin fs-2"></i></a>
-                        <a href="https://www.instagram.com/kirilyoanidi/" target="_blank"><i
-                                class="bi-instagram fs-2"></i></a>
-                        <a href="https://www.youtube.com/@Materialize.services" target="_blank"><i
-                                class="bi-youtube fs-2"></i></a>
-                        <a href="https://www.tiktok.com/@kiril.yoanidi" target="_blank"><i
-                                class="bi-tiktok fs-2"></i></a>
-                        <a href="https://discord.gg/4ykG2pkSVJ" target="_blank"><i class="bi-discord fs-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-md-0 mb-5">
-                <div class="footer-logo text-lg-end text-center text-lg-start">
-                    <img src="images/footer-logo.png" height="154">
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer End  -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md" dir="rtl">
-        <div class="modal-content">
-            <div class="modal-header text-end border-0">
-
-
-                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-
-                <h1 class="modal-title w-100" id="exampleModalLabel">שאלון למחפשי השקעה</h1>
-
-            </div>
-            <div class="modal-body">
-                <form action="https://formsubmit.co/kiril.yoanidi@materialize.services" method="POST">
-                    <div class="form-group row mb-4">
-                        <div class="col-md-3 text-end">
-                            <label for="firstName">שם מלא</label>
-                        </div>
-
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" name="firstName" placeholder="" value="" required>
-                            <div class="invalid-feedback">
-                                Valid first name is required.
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-
-                        <div class="col-md-3 text-end">
-                            <label for="phone">טלפון</label>
-                        </div>
-
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="05XXXXXXXX"
-                                   required>
-                            <div class="invalid-feedback" style="width: 100%;">
-                                Your phone is required.
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-3 text-end">
-                            <label for="email">אימייל</label>
-                        </div>
-
-                        <div class="col-md-9">
-                            <input type="email" class="form-control" id="email" name="email"
-                                   placeholder="you@example.com" required>
-                            <div class="invalid-feedback">
-                                Please enter a valid email address.
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-
-                        <div class="col-md-3 text-end">
-                            <label for="companyName">שם המיזם</label>
-                        </div>
-
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="companyName" name="companyName" placeholder=""
-                                   value="" required>
-                            <div class="invalid-feedback">
-                                company name is required.
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-
-                        <div class="col-md-7 text-end">
-                            <label for="options-first-time">
-                                האם זה המיזם ראשון שלך?
-                            </label>
-                        </div>
-
-                        <div class="col-md-5">
-                            <div>
-                                <input type="radio" class="btn-check" name="options-first-time" value="yes"
-                                       id="first-time-outlined" autocomplete="off" checked>
-                                <label class="btn btn-outline-primary fw-bold text-black circle-label"
-                                       for="first-time-outlined"> כן</label>
-
-                                <input type="radio" class="btn-check" name="options-first-time" value="no"
-                                       id="first-time-outlined1" autocomplete="off">
-                                <label class="btn btn-outline-primary fw-bold text-black circle-label"
-                                       for="first-time-outlined1">לא</label>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-7 text-end">
-                            <label for="companyStart">תאריך תחילת המיזם</label>
-                        </div>
-
-                        <div class="col-md-5">
-                            <input type="date" class="form-control" id="companyStart" name="companyStartDate"
-                                   placeholder="" value="" required>
-                            <div class="invalid-feedback">
-                                company date is required.
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-8 text-end">
-                            <label for="numberOfCustomers">כמה לקוחות פעילים יש למיזם?</label>
-                        </div>
-
-                        <div class="col-md-4">
-                            <input type="number" class="form-control" id="numberOfCustomers" name="numberOfCustomers"
-                                   placeholder="0" min="0" max="100000000" required>
-                            <div class="invalid-feedback">
-                                how many customers.
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-9 text-end">
-                            <label for="numberOfWaitlist">כמה לקוחות נמצאים ברשימת המתנה?</label>
-                        </div>
-
-                        <div class="col-md-3">
-                            <input type="number" class="form-control" id="numberOfWaitlist" name="numberOfWaitlist"
-                                   placeholder="0" min="0" max="100000000" required>
-                            <div class="invalid-feedback">
-                                how many waitlist.
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-7 text-end">
-                            <label for="options-company-registered">
-                                האם המיזם רשום כחברה?
-                            </label>
-                        </div>
-
-                        <div class="col-md-5">
-                            <div>
-                                <input type="radio" class="btn-check" name="options-company-registered" value="yes"
-                                       id="company-registered-outlined" autocomplete="off" checked>
-                                <label class="btn btn-outline-primary fw-bold text-black"
-                                       for="company-registered-outlined"> כן</label>
-
-                                <input type="radio" class="btn-check" name="options-company-registered" value="no"
-                                       id="company-registered-outlined1" autocomplete="off">
-                                <label class="btn btn-outline-primary fw-bold text-black"
-                                       for="company-registered-outlined1">לא</label>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-9 text-end">
-                            <label for="numberOfPartners">כמה שותפים יש במיזם (כולל אותך)</label>
-                        </div>
-
-                        <div class="col-md-3">
-                            <input type="number" class="form-control" id="numberOfPartners" name="numberOfPartners"
-                                   placeholder="1" min="1" max="20" required>
-                            <div class="invalid-feedback">
-                                how many partners.
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-9 text-end">
-                            <label for="numberOfInvestors">כמה משקיעים שונים יש לחברה?</label>
-                        </div>
-
-                        <div class="col-md-3">
-                            <input type="number" class="form-control" id="numberOfInvestors" name="numberOfInvestors"
-                                   placeholder="0" min="0" max="20" required>
-                            <div class="invalid-feedback">
-                                how many investors.
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-9 text-end">
-                            <label for="totalInvestmentNIS">כמה סה"כ הושקע בחברה (ש"ח)</label>
-                        </div>
-
-                        <div class="col-md-3">
-                            <input type="number" class="form-control" id="totalInvestmentNIS" name="totalInvestmentNIS"
-                                   placeholder="0" min="0" max="1000000000" required>
-                            <div class="invalid-feedback">
-                                how much invested in nis.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-9 text-end">
-                            <label for="desiredInvestmentNIS">כמה היית רוצה לקבל להשקעה (ש"ח)?</label>
-                        </div>
-
-                        <div class="col-md-3">
-                            <input type="number" class="form-control" id="desiredInvestmentNIS"
-                                   name="desiredInvestmentNI" placeholder="0" min="0" max="1000000000" required>
-                            <div class="invalid-feedback">
-                                how much you want invested in nis.
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-9 text-end">
-                            <label for="companyShareForInvestment">כמה אחוזים מהחברה תתן תמורת הסכום שציינת?</label>
-                        </div>
-
-                        <div class="col-md-3">
-                            <input type="number" class="form-control" id="companyShareForInvestment"
-                                   name="companyShareForInvestment" placeholder="0" min="0" max="100" required>
-                            <div class="invalid-feedback">
-                                how much precent of company.
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-12 text-end mb-2">
-                            <label for="planForInvestment">למה אתה צריך את הכסף? (2-3 משפטים)</label>
-                        </div>
-                        <div class="col-md-12">
-                            <textarea class="form-control" id="planForInvestment" name="planForInvestment" cols="30"
-                                      rows="5" required></textarea>
-                            <div class="invalid-feedback">
-                                please give details of investment
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-12 text-end mb-2">
-                            <label>מלבד הכסף, אילו עוד ציפיות יש מגוף ההשקעה?</label>
-                        </div>
-                        <div class="col-md-12">
-                            <textarea class="form-control" id="additionalExpectations" name="additionalExpectations"
-                                      cols="30" rows="5" required></textarea>
-                            <div class="invalid-feedback">
-                                please give details of investment
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="form-group row mb-4">
-                        <div class="col-md-12 text-end mb-2">
-                            <label>האם יש עוד משהו שאנו צריכים לדעת?</label>
-                        </div>
-
-                        <div class="col-md-12">
-                            <textarea class="form-control" id="additionalInformation" name="additionalInformation"
-                                      cols="30" rows="5" required></textarea>
-                            <div class="invalid-feedback">
-                                please give additional info
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="form-group row mb-4 justify-content-center">
-
-                        <div class="col-md-10 text-center">
-                            <button type="submit" class="form-btn">שלח את הטופס</button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/fontawesome.min.js"
-        integrity="sha512-c41hNYfKMuxafVVmh5X3N/8DiGFFAV/tU2oeNk+upk/dfDAdcbx5FrjFOkFhe4MOLaKlujjkyR4Yn7vImrXjzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/main.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
 </body>
 
 </html>
