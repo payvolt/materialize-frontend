@@ -5,18 +5,18 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLF0P0TZXM"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-CLF0P0TZXM');
+        gtag('config', 'G-CLF0P0TZXM');
     </script>
     <!--clarity-->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "g4j42fkfqt");
     </script>
 
@@ -32,7 +32,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -48,48 +49,53 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <script>  
+    <script>
         let isDown = false;
         let isPhone = false;
         function logoChange() {
-            if(isPhone) {
+            if (isPhone) {
                 return;
             }
-            if(window.scrollY>30) {
-                if(isDown===false) {
+            if (window.scrollY > 30) {
+                if (isDown === false) {
                     let logo = document.getElementById("logo-img");
-                    logo.setAttribute("src","./img/materialize-logo-primary.png");
+                    logo.setAttribute("src", "./img/materialize-logo-primary.png");
                     isDown = true;
                 }
-                
+
             } else {
-                if(isDown===true) {
+                if (isDown === true) {
                     let logo = document.getElementById("logo-img");
-                    logo.setAttribute("src","./img/materialize-logo-white.png");
+                    logo.setAttribute("src", "./img/materialize-logo-white.png");
                     isDown = false;
                 }
             }
-            
+
         }
 
         function phoneCheck() {
-            if(window.innerWidth<900 && !isPhone) {
+            if (window.innerWidth < 900 && !isPhone) {
                 isPhone = true;
                 let logo = document.getElementById("logo-img");
-                logo.setAttribute("src","./img/materialize-logo-primary.png");
+                logo.setAttribute("src", "./img/materialize-logo-primary.png");
             }
         }
     </script>
 
-    <!-- Meta Pixel Code --> <script> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '237018182485197'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=237018182485197&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+    <script> !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '237018182485197'); fbq('track', 'PageView'); </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=237018182485197&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 
 </head>
 
 <body onscroll="logoChange()">
-    
-    <div class="container-xxl bg-white p-0">
+
+    <div class="container-fluid bg-white p-0">
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -98,10 +104,11 @@
 
 
         <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0" >
+        <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <img src="./img/materialize-logo-white.png" id="logo-img" style="float:left" onload="phoneCheck()"/>
+                    <img src="./img/materialize-logo-white.png" id="logo-img" style="float:left"
+                        onload="phoneCheck()" />
                     <h1 class="mt-2 mb-0 ml-5 mr-0">Materialize</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
@@ -129,19 +136,22 @@
                 </div>
             </nav>
 
-            <div class="container-xxl py-5 bg-primary hero-header mb-5" dir="rtl">
-                <div class="container my-5 py-5 px-lg-5">
+            <div class="container-fluid py-5 bg-primary hero-header mb-5" dir="rtl" style="height: 914px !important;">
+                <div class="container  my-5 py-5 ">
                     <div class="row g-5 py-5">
                         <div class="col-lg-6 text-center text-lg-end">
                             <h1 class="text-white mb-4 animated zoomIn">כל מה שהסטאראפ שלך צריך</h1>
                             <h2 class="text-white mb-4 animated zoomIn">המשקיעים שלנו מחכים לך!</h2>
                             <p class="text-white pb-3 animated zoomIn">
-                                ליווי צמוד של יועצים עם ניסיון מוכח ביזמות, שעשו אקזיט והובילו עשרות פרוייקטים אשר יובילו גם אותך להצלחה.
+                                ליווי צמוד של יועצים עם ניסיון מוכח ביזמות, שעשו אקזיט והובילו עשרות פרוייקטים אשר
+                                יובילו גם אותך להצלחה.
                             </p>
                             <p class="text-white pb-3 animated zoomIn">
                                 תן לצוות המקצועי שלנו לעזור לך לעשות סטארטאפ מצליח.
                             </p>
-                            <a href="#contact" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">אני רוצה פגשית ייעוץ חינם!</a>
+                            <a href="#contact"
+                                class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">אני רוצה
+                                פגשית ייעוץ חינם!</a>
                             <!-- <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a> -->
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
@@ -159,11 +169,13 @@
             <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
                     <div class="modal-header border-0">
-                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
                     <div class="modal-body d-flex align-items-center justify-content-center">
                         <div class="input-group" style="max-width: 600px;">
-                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                            <input type="text" class="form-control bg-transparent border-light p-3"
+                                placeholder="Type search keyword">
                             <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
                         </div>
                     </div>
@@ -174,7 +186,7 @@
 
 
         <!-- About Start -->
-        <div class="container-xxl py-5" id="about">
+        <div class="container-fluid py-5" id="about">
             <div class="container px-lg-5">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" dir="rtl">
@@ -183,7 +195,8 @@
                             <h2 class="mt-2">מעל ל 7 שנות ניסיון ועשרות פרוייקטים בעולם היזמות!</h2>
                         </div>
                         <p class="mb-4">
-                            קבוצת מטריאלייז מהוה מסננת למשקיעים פרטיים, אנג'לים וקרנות הון סיכון. בעזרת תהליך יחודי לפי דרישות המשקיע אנו נעזור לך לגייס השקעה בדרך הנכונה והמהירה ביותר עבורך.
+                            קבוצת מטריאלייז מהוה מסננת למשקיעים פרטיים, אנג'לים וקרנות הון סיכון. בעזרת תהליך יחודי לפי
+                            דרישות המשקיע אנו נעזור לך לגייס השקעה בדרך הנכונה והמהירה ביותר עבורך.
                         </p>
                         <div class="row g-3">
                             <div class="col-sm-6">
@@ -196,15 +209,24 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-center mt-4" id="contact">
-                            <a class="btn btn-primary rounded-pill px-4 me-3" href="https://materialize.name/1691826307674" target="_blank">מדריך חינם להשקעות</a>
-                            <a class="btn btn-outline-primary btn-square me-3" href="https://www.facebook.com/profile.php?id=100089729137037" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square me-3" href="https://www.youtube.com/@Materialize.services" target="_blank"><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-primary btn-square me-3" href="https://www.instagram.com/kirilyoanidi/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-primary btn-square me-3" href="https://www.linkedin.com/company/materialize-services/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary rounded-pill px-4 me-3"
+                                href="https://materialize.name/1691826307674" target="_blank">מדריך חינם להשקעות</a>
+                            <a class="btn btn-outline-primary btn-square me-3"
+                                href="https://www.facebook.com/profile.php?id=100089729137037" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-3"
+                                href="https://www.youtube.com/@Materialize.services" target="_blank"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-3"
+                                href="https://www.instagram.com/kirilyoanidi/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-3"
+                                href="https://www.linkedin.com/company/materialize-services/" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about.jpg" >
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about.jpg">
                     </div>
                 </div>
             </div>
@@ -213,7 +235,7 @@
 
 
         <!-- Newsletter Start -->
-        <div class="container-xxl bg-primary newsletter my-5 wow fadeInUp" data-wow-delay="0.1s" dir="rtl">
+        <div class="container-fluid bg-primary newsletter my-5 wow fadeInUp" data-wow-delay="0.1s" dir="rtl">
             <div class="container px-lg-5">
                 <div class="row align-items-center" style="height: 250px;">
                     <div class="col-12 col-md-6">
@@ -221,11 +243,13 @@
                         <small class="text-white">הכנס טלפון + שם ולחץ על המטוס!</small>
                         <div class="position-relative w-100 mt-3">
                             <form action="https://formsubmit.co/kiril.yoanidi@materialize.services" method="POST">
-                                <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5 mt-3" type="text" id="sitelead" name="sitelead" placeholder="הכנס שם + טלפון" style="height: 48px;">
-                                <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                                <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5 mt-3" type="text"
+                                    id="sitelead" name="sitelead" placeholder="הכנס שם + טלפון" style="height: 48px;">
+                                <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                        class="fa fa-paper-plane text-primary fs-4"></i></button>
                             </form>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-6 text-center mb-n5 d-none d-md-block">
                         <img class="img-fluid mt-5" style="height: 250px;" src="img/newsletter.png">
@@ -237,7 +261,7 @@
 
 
         <!-- Service Start -->
-        <div class="container-xxl py-5" id="services" dir="rtl">
+        <div class="container-fluid py-5" id="services" dir="rtl">
             <div class="container px-lg-5">
                 <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="position-relative d-inline text-primary ps-4">השירותים שלנו</h6>
@@ -248,7 +272,7 @@
                         <div class="service-item d-flex flex-column justify-content-center text-center rounded">
                             <div class="service-icon flex-shrink-0">
                                 <i class="bi-cart4 fa-2x"></i>
-                                
+
                             </div>
                             <h5 class="mb-3">אימות שוק</h5>
                             <p>נבין את גודל השוק והפוטנציאל לפריצה עולמית</p>
@@ -332,9 +356,10 @@
 
 
         <!-- Portfolio Start -->
-        <div class="container-xxl py-5" id="projects">
+        <div class="container-fluid py-5" id="projects">
             <div class="container px-lg-5">
-                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s" dir="rtl">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s"
+                    dir="rtl">
                     <h6 class="position-relative d-inline text-primary ps-4">המיזמים שלנו</h6>
                     <h2 class="mt-2">חלק מהסטארטאפים של הלקוחות שלנו</h2>
                 </div>
@@ -352,9 +377,11 @@
                         <div class="position-relative rounded overflow-hidden">
                             <img class="img-fluid w-100" src="img/payvolt.png" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="img/payvolt.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <a class="btn btn-light" href="img/payvolt.png" data-lightbox="portfolio"><i
+                                        class="fa fa-plus fa-2x text-primary"></i></a>
                                 <div class="mt-auto">
-                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Crypto based monetization system</small>
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Crypto based monetization
+                                        system</small>
                                     <a class="h5 d-block text-white mt-1 mb-0" href="https://payvolt.io">Payvolt.io</a>
                                 </div>
                             </div>
@@ -364,10 +391,13 @@
                         <div class="position-relative rounded overflow-hidden">
                             <img class="img-fluid w-100" src="img/giftgala.png" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="img/giftgala.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <a class="btn btn-light" href="img/giftgala.png" data-lightbox="portfolio"><i
+                                        class="fa fa-plus fa-2x text-primary"></i></a>
                                 <div class="mt-auto">
-                                    <small class="text-white"><i class="fa fa-folder me-2"></i>digital wedding gifts</small>
-                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://gift-sending-app.framer.ai/">GiftGala</a>
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>digital wedding
+                                        gifts</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0"
+                                        href="https://gift-sending-app.framer.ai/">GiftGala</a>
                                 </div>
                             </div>
                         </div>
@@ -376,10 +406,12 @@
                         <div class="position-relative rounded overflow-hidden">
                             <img class="img-fluid w-100" src="img/artilab.png" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="img/artilab.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <a class="btn btn-light" href="img/artilab.png" data-lightbox="portfolio"><i
+                                        class="fa fa-plus fa-2x text-primary"></i></a>
                                 <div class="mt-auto">
                                     <small class="text-white"><i class="fa fa-folder me-2"></i>smart sales calls</small>
-                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://www.artilab.xyz/">Artilab.ai</a>
+                                    <a class="h5 d-block text-white mt-1 mb-0"
+                                        href="https://www.artilab.xyz/">Artilab.ai</a>
                                 </div>
                             </div>
                         </div>
@@ -388,10 +420,13 @@
                         <div class="position-relative rounded overflow-hidden">
                             <img class="img-fluid w-100" src="img/leadog.png" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="img/leadog.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <a class="btn btn-light" href="img/leadog.png" data-lightbox="portfolio"><i
+                                        class="fa fa-plus fa-2x text-primary"></i></a>
                                 <div class="mt-auto">
-                                    <small class="text-white"><i class="fa fa-folder me-2"></i>dog training network</small>
-                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://leadog-dog-training-leads.framer.ai/">Leadog</a>
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>dog training
+                                        network</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0"
+                                        href="https://leadog-dog-training-leads.framer.ai/">Leadog</a>
                                 </div>
                             </div>
                         </div>
@@ -400,9 +435,11 @@
                         <div class="position-relative rounded overflow-hidden">
                             <img class="img-fluid w-100" src="img/innosmart.png" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="img/innosmart.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <a class="btn btn-light" href="img/innosmart.png" data-lightbox="portfolio"><i
+                                        class="fa fa-plus fa-2x text-primary"></i></a>
                                 <div class="mt-auto">
-                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Automotive services solutions</small>
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Automotive services
+                                        solutions</small>
                                     <a class="h5 d-block text-white mt-1 mb-0" href="">InnoSmart</a>
                                 </div>
                             </div>
@@ -412,10 +449,13 @@
                         <div class="position-relative rounded overflow-hidden">
                             <img class="img-fluid w-100" src="img/prompteer.png" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="img/prompteer.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <a class="btn btn-light" href="img/prompteer.png" data-lightbox="portfolio"><i
+                                        class="fa fa-plus fa-2x text-primary"></i></a>
                                 <div class="mt-auto">
-                                    <small class="text-white"><i class="fa fa-folder me-2"></i>prompt sharing and engineering network</small>
-                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://prompteer.framer.ai/">Prompteer.ai</a>
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>prompt sharing and
+                                        engineering network</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0"
+                                        href="https://prompteer.framer.ai/">Prompteer.ai</a>
                                 </div>
                             </div>
                         </div>
@@ -427,14 +467,16 @@
 
 
         <!-- Testimonial Start -->
-        <div class="container-xxl bg-primary testimonial py-5 my-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container-fluid bg-primary testimonial py-5 my-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container py-5 px-lg-5">
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item bg-transparent border rounded text-white p-4">
                         <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>Professionals, excellent and fast service. They know the field and have a lot of value to provide to people at the beginning of their journey. Recommend!</p>
+                        <p>Professionals, excellent and fast service. They know the field and have a lot of value to
+                            provide to people at the beginning of their journey. Recommend!</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/avi.png" style="width: 50px; height: 50px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/avi.png"
+                                style="width: 50px; height: 50px;">
                             <div class="ps-3">
                                 <h6 class="text-white mb-1">אבי גולברג</h6>
                                 <small>artilab.ai</small>
@@ -443,9 +485,11 @@
                     </div>
                     <div class="testimonial-item bg-transparent border rounded text-white p-4">
                         <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>Kirill and Michel the guns 💪 always ready to help and promote..always with a smile always a good atmosphere..a pleasure to work with them!!</p>
+                        <p>Kirill and Michel the guns 💪 always ready to help and promote..always with a smile always a
+                            good atmosphere..a pleasure to work with them!!</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/netanel.png" style="width: 50px; height: 50px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/netanel.png"
+                                style="width: 50px; height: 50px;">
                             <div class="ps-3">
                                 <h6 class="text-white mb-1">נתנאל אהרון</h6>
                                 <small>DualScreen</small>
@@ -454,9 +498,12 @@
                     </div>
                     <div class="testimonial-item bg-transparent border rounded text-white p-4">
                         <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>After several consultants in the field of startups, I came to a professional company, with a precise process, which knows how to target exactly the right steps of establishing a startup without throwing away money</p>
+                        <p>After several consultants in the field of startups, I came to a professional company, with a
+                            precise process, which knows how to target exactly the right steps of establishing a startup
+                            without throwing away money</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 50px; height: 50px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
+                                style="width: 50px; height: 50px;">
                             <div class="ps-3">
                                 <h6 class="text-white mb-1">יחיעם פלדהיים</h6>
                                 <small>Traveller</small>
@@ -465,9 +512,12 @@
                     </div>
                     <div class="testimonial-item bg-transparent border rounded text-white p-4">
                         <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>Kirill is a first class professional. Provides professional and wholehearted service with advice, tips and ideas that are worth their weight in gold! I warmly and wholeheartedly recommend using his services</p>
+                        <p>Kirill is a first class professional. Provides professional and wholehearted service with
+                            advice, tips and ideas that are worth their weight in gold! I warmly and wholeheartedly
+                            recommend using his services</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/leameller.png" style="width: 50px; height: 50px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/leameller.png"
+                                style="width: 50px; height: 50px;">
                             <div class="ps-3">
                                 <h6 class="text-white mb-1">לארה מלר</h6>
                                 <small>smartwear</small>
@@ -481,7 +531,7 @@
 
 
         <!-- Team Start -->
-        <div class="container-xxl py-5" id="team">
+        <div class="container-fluid py-5" id="team">
             <div class="container px-lg-5">
                 <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="position-relative d-inline text-primary ps-4">הצוות שלנו</h6>
@@ -491,11 +541,14 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item">
                             <div class="d-flex">
-                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5"
+                                    style="width: 75px;">
                                     <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-facebook-f"></i></a> -->
                                     <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a> -->
                                     <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a> -->
-                                    <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/yair-zafrany-8a207b192/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1"
+                                        href="https://www.linkedin.com/in/yair-zafrany-8a207b192/" target="_blank"><i
+                                            class="fab fa-linkedin-in"></i></a>
                                 </div>
                                 <img class="img-fluid rounded w-100" src="img/yair.png" alt="">
                             </div>
@@ -508,11 +561,18 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item">
                             <div class="d-flex">
-                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
-                                    <a class="btn btn-square text-primary bg-white my-1" href="https://www.facebook.com/kiril.Yoanidi/"><i class="fab fa-facebook-f"></i></a>
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5"
+                                    style="width: 75px;">
+                                    <a class="btn btn-square text-primary bg-white my-1"
+                                        href="https://www.facebook.com/kiril.Yoanidi/"><i
+                                            class="fab fa-facebook-f"></i></a>
                                     <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a> -->
-                                    <a class="btn btn-square text-primary bg-white my-1" href="https://www.instagram.com/kirilyoanidi/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/kiril-yoanidi-380633222/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1"
+                                        href="https://www.instagram.com/kirilyoanidi/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1"
+                                        href="https://www.linkedin.com/in/kiril-yoanidi-380633222/" target="_blank"><i
+                                            class="fab fa-linkedin-in"></i></a>
                                 </div>
                                 <img class="img-fluid rounded w-100" src="img/kiril.png" alt="">
                             </div>
@@ -525,10 +585,13 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                         <div class="team-item">
                             <div class="d-flex">
-                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5"
+                                    style="width: 75px;">
                                     <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-facebook-f"></i></a> -->
                                     <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a> -->
-                                    <a class="btn btn-square text-primary bg-white my-1" href="https://www.instagram.com/mishel_l23/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1"
+                                        href="https://www.instagram.com/mishel_l23/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
                                     <!-- <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a> -->
                                 </div>
                                 <img class="img-fluid rounded w-100" src="img/mishel.png" alt="">
@@ -543,7 +606,7 @@
             </div>
         </div>
         <!-- Team End -->
-        
+
 
         <!-- Footer Start -->
         <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -555,13 +618,23 @@
                         <p><i class="fa fa-phone-alt me-3"></i>052-6918223</p>
                         <p><i class="fa fa-envelope me-3"></i>kiril.yoanidi@materialize.services</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href="https://chat.whatsapp.com/Ik95kPacZom7nC3PGrT45j" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://discord.gg/4ykG2pkSVJ" target="_blank"><i class="bi bi-discord"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@kiril.yoanidi" target="_blank"><i class="bi bi-tiktok"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/kiril.Yoanidi/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@Materialize.services" target="_blank"><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/kirilyoanidi/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/kiril-yoanidi-380633222/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social"
+                                href="https://chat.whatsapp.com/Ik95kPacZom7nC3PGrT45j" target="_blank"><i
+                                    class="bi bi-whatsapp"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://discord.gg/4ykG2pkSVJ"
+                                target="_blank"><i class="bi bi-discord"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@kiril.yoanidi"
+                                target="_blank"><i class="bi bi-tiktok"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/kiril.Yoanidi/"
+                                target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social"
+                                href="https://www.youtube.com/@Materialize.services" target="_blank"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/kirilyoanidi/"
+                                target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social"
+                                href="https://www.linkedin.com/in/kiril-yoanidi-380633222/" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <!-- <div class="col-md-6 col-lg-3">
@@ -600,8 +673,10 @@
                         <p>Join our news letter and get all the hot news in the startup world.</p>
                         <div class="position-relative w-100 mt-3">
                             <form action="https://formsubmit.co/kiril.yoanidi@materialize.services" method="POST">
-                                <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" id="newsemail" name="newsemail" type="email" placeholder="Your Email" style="height: 48px;">
-                                <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                                <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" id="newsemail"
+                                    name="newsemail" type="email" placeholder="Your Email" style="height: 48px;">
+                                <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                        class="fa fa-paper-plane text-primary fs-4"></i></button>
                             </form>
                         </div>
                     </div>
@@ -611,10 +686,10 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Materialize.services</a>, All Right Reserved. 
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                            &copy; <a class="border-bottom" href="#">Materialize.services</a>, All Right Reserved.
+
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
